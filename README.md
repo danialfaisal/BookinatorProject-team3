@@ -73,7 +73,7 @@ Individual Grade (35%)
 3. Each subsequent sprint then follows the demonstration of deliverables for each sprint and the review of what will be delivered in the next sprint. During the later sprints, technical and user documentation should be a part of the demonstration.
 
 | Grade | Requirements |
-|-------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | A | To receive an “A,” each of the criteria must be met throughout the semester  |
 |  | * No application functionality errors during the demos for the product owner (NOTE: All features should be tested and validated prior to the demos), Since voice for the team during demos unless presenter asks for support from a single team member. |
 |  | * At least 90% features in the demo match agreed upon requirements for the current sprint*  |
