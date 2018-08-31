@@ -67,33 +67,29 @@ Team can select these
 Individual Grade (35%)
 
 ## Rubrics
-1. Sprint Demonstrations - The Sprint product prototype demos will occur at the conclusion of each sprint including Sprint 0 (approximately every three weeks). The primary deliverable of Sprint 0 is the Statement of Work ready for signing, a release plan including the anticipated featured to be delivered during each of the subsequent sprints and mock-up for what will be delivered in Sprint 1.
+### Sprint Demonstrations
+1. The Sprint product prototype demos will occur at the conclusion of each sprint including Sprint 0 (approximately every three weeks). The primary deliverable of Sprint 0 is the Statement of Work ready for signing, a release plan including the anticipated featured to be delivered during each of the subsequent sprints and mock-up for what will be delivered in Sprint 1.
 2. During Sprint 1, the team will deliver the first set of working code running on the production server and run through all the features of this first set of working code. The team will also demonstrate the mockups, features/stories of what they plan to deliver in the next sprint. Burn down charts should also be reviewed during each sprint demo.
 3. Each subsequent sprint then follows the demonstration of deliverables for each sprint and the review of what will be delivered in the next sprint. During the later sprints, technical and user documentation should be a part of the demonstration.
 
+| Grade | Requirements |
+|-------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| A | To receive an “A,” each of the criteria must be met throughout the semester  |
+|  | * No application functionality errors during the demos for the product owner (NOTE: All features should be tested and validated prior to the demos), Since voice for the team during demos unless presenter asks for support from a single team member. |
+|  | * At least 90% features in the demo match agreed upon requirements for the current sprint*  |
+|  | * Product owner evaluation of demos are rated higher than 90% |
+| B | * Minor application functionality errors during product demos for the client |
+|  | * Generally, a single voice is present for the team during demos, but the speaker has to rely on additional support from the team for minor questions |
+|  | * 80%-90% of the features in the demo match agreed upon requirements for the current sprint |
+|  | * Product owner evaluation of demos are rated between 80% to 90% |
+| C | * Multiple application functionality errors during demos |
+|  | * Multiple speakers during demos revealing lack of team coordination. |
+|  | * Demoed features do not match agreed upon requirements for the current sprint and/or less that 80% of the agreed upon requirements |
+|  | * Product owner evaluation of demos are rated less than 80% |
 
-Grade
-Requirements
-A
-To receive an “A,” each of the criteria must be met throughout the semester
-No application functionality errors during the demos for the product owner (NOTE: All features should be tested and validated prior to the demos)    Since voice for the team during demos unless presenter asks for support from a single team member
- At least 90% features in the demo match agreed upon requirements for the current sprint
-Product owner evaluation of demos are rated higher than 90%
-
-B
-Minor application functionality errors during product demos for the client
-Generally, a single voice is present for the team during demos, but the speaker has to rely on additional support from the team for minor questions
-80%-90% of the features in the demo match agreed upon requirements for the current sprint
-Product owner evaluation of demos are rated between 80% to 90%
-
-C
-Multiple application functionality errors during demos
-Multiple speakers during demos revealing lack of team coordination.
-Demoed features do not match agreed upon requirements for the current sprint and/or less that 80% of the agreed upon requirements
-Product owner evaluation of demos are rated less than 80%
-
-Final Product Review
+### Final Product Review
 The final product is the primary deliverable for this assignment. The final product should match the product owner requirements based on what the team and client agreed to deliver over the course of the semester. The following table identifies guidelines for assignment of grades for the final product.
+
 Grade
 Requirements
 A
@@ -111,9 +107,11 @@ C
 Multiple application functionality errors
 Demoed features do not match agreed upon requirements for the current sprint and/or less that 80% of the agreed upon requirements
 Product owner evaluation of demos are rated less than 80%
-Final Presentation
+
+### Final Presentation
 The final presentation is an opportunity for the students to practice a Capstone style presentation which you will give if you elect to take the Capstone class.
 The following table identifies the guidelines for the assignment of grades for the final presentation, however, the professor has the discretion to include additional criteria as required.
+
 Grade
 Requirements
 A
@@ -158,10 +156,13 @@ Audience was not prepared for presentation content through the use of an agenda 
 Use of visual aids (i.e. PowerPoint) to support the presentation was ineffective
 Presentation style was ineffective by lacking one or more of the following: sustained eye contact with the audience, proper vocal rate with variety, pauses, projection & pronunciation, and suitable facial expression, gestures, and animation
 Many members of the group failed to remain professional throughout the presentation
-
-Project Documentation
+
+
+### Project Documentation
 Throughout the project, multiple documents will be created, such as statement of work, final report, user manual and technical manual. The purpose of these documents is to describe, in detail, the resource, timing and infrastructure requirements to deliver the final product. Any plagiarism will result in an automatic FAILING grade for all students for this assignment.
 The following table identifies the guidelines for the assignment of grades for the product documents; however, the professor has the discretion to include additional criteria as required.
+
+
 Grade
 Requirements
 A
@@ -185,10 +186,11 @@ Drafts submitted with less than requested levels of completion
 Grammatical errors present throughout the document
 Incomplete description of the project and product delivery requirements
 Incomplete list of references
-
-Peer Review
+
+### Peer Review
 At regular intervals, students will be evaluated by members the project team. The purpose of these assessments is for students to receive feedback from other members of the team to understand areas where they can improve.
 The following table identifies the guidelines for the assignment of grades for the peer review grading component; however, the professor has the discretion to include additional criteria as required.
+
 Grade
 Requirements
 A
@@ -202,10 +204,11 @@ When rating one’s peers, some of the evaluations of one’s peers are carefull
 C
 Average peer review grade of C (includes overall grade and comments)
 When rating one’s peers, all students are graded identically and/or little or no thoughtful or constructive comments
-
-Individual Assessment
+
+### Individual Assessment
 At regular intervals during the semester, each student’s performance in the course will be evaluated. Students will receive on each: attitude, collaboration, attendance and participation.
 The following table identifies the guidelines for the assignment of grades for the individual assessment; however, the professor has the discretion to include additional criteria as required.
+
 Grade
 Requirements
 A
