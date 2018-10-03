@@ -26,7 +26,7 @@ SECRET_KEY = 'ts-q2k)i!dmia=a_manz0@(is)f#y^6ss^%xypert6&2dl9ihv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mfs-assignment-2.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 #mfs-assignment-2.herokuapp.com
 
 
