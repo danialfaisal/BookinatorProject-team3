@@ -7,7 +7,7 @@ db.sqlite3
 .DS_Store
 # Django stuff:
 *.log
-mfscrm/local_settings.py
+local_settings.py/mfscrm
 /.idea
 local_settings.py
 venv/
