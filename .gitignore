@@ -5,10 +5,7 @@ VenvMfs
 db.sqlite3
 /static
 .DS_Store
-# Django stuff:
 *.log
-local_settings.py/
 /.idea
 local_settings.py
 venv/
-local_settings.py
