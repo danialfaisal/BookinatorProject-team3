@@ -1,7 +1,7 @@
 *.pyc
 *~
 __pycache__
-myvenv
+VenvMfs
 db.sqlite3
 /static
 .DS_Store
@@ -9,4 +9,5 @@ db.sqlite3
 *.log
 local_settings.py
 /.idea
-mfscrm/local_settings.py
+local_settings.py
+venv/

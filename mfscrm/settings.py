@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ts-q2k)i!dmia=a_manz0@(is)f#y^6ss^%xypert6&2dl9ihv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 #mfs-assignment-2.herokuapp.com
@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'mfscrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbal9slikq3j5r',
-        'USER': 'tjkdcusxosylpui',
-        'PASSWORD': '93d49a5b53d17367fa4ab745ec1617ca48ce34c39762e5daac0bc850aeb6c6a7',
-        'HOST': 'ec2-50-17-225-140.compute-1.amazonaws.com',
+        'NAME': 'd45bakcp2fae9e',
+        'USER': 'kcqrqxunakcghz',
+        'PASSWORD': '86bf509809f16eed7c4da0b1fa9af55630900afda4f4979cba02963879b61a9e',
+        'HOST': 'ec2-54-235-90-0.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -147,7 +147,7 @@ STATICFILES_DIRS = (
 
 
 # Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config()
 
