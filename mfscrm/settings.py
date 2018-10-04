@@ -159,7 +159,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 try:
-    from mfscrm.local_settings import *
+    from mfscrm.mfscrm.local_settings import *
 except ImportError:
     pass
 
