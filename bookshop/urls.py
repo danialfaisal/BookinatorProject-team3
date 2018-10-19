@@ -1,4 +1,4 @@
-"""mfscrm URL Configuration
+"""bookshop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,20 +13,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('cart/', include('cart.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
+    path('buybooks/shop/', include('shop.urls', namespace='shop')),
+    path('buybooks/', include('buybooks.urls', namespace='buybooks')),
     path('', include('crm.urls')),
 
     url(r'^accounts/login/$', LoginView.as_view(template_name='registration/login.html'), name="login"),
     url(r'^accounts/logout/$', LogoutView.as_view(), LogoutView.next_page, name="logout"),
-
-
-
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

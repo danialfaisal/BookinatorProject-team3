@@ -11,10 +11,10 @@ class CustomerList(admin.ModelAdmin):
 
 
 class ServiceList(admin.ModelAdmin):
-    list_display = ( 'cust_name', 'service_category', 'setup_time')
-    list_filter = ( 'cust_name', 'setup_time')
-    search_fields = ('cust_name', )
-    ordering = ['cust_name']
+    list_display = ( 'category', 'name', 'author')
+    list_filter = ( 'category', 'name')
+    search_fields = ('category', )
+    ordering = ['category']
 
 class ProductList(admin.ModelAdmin):
     list_display = ( 'cust_name', 'product', 'pickup_time')

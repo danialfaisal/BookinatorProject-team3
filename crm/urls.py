@@ -8,10 +8,17 @@ urlpatterns = [
     path('', views.home, name='home'),
     url(r'^home/$', views.home, name='home'),
 
+
+    path('book_list/', views.book_list, name='book_list'),
+    path('<int:id>/<slug:slug>/', views.book_detail, name='book_detail'),
+    #path('<int:id>/share/', views.book_share, name='book_share'),
+
     # customer
-    path('customer_list', views.customer_list, name='customer_list'),
-    path('customer/<int:pk>/edit/', views.customer_edit, name='customer_edit'),
-    path('customer/<int:pk>/delete/', views.customer_delete, name='customer_delete'),
+    #path('customer_list', views.customer_list, name='customer_list'),
+    #path('customer/<int:pk>/edit/', views.customer_edit, name='customer_edit'),
+    #path('customer/<int:pk>/delete/', views.customer_delete, name='customer_delete'),
+
+    #path('customer/<int:pk>/summary/', views.summary, name='summary'),
 
     # services
     path('service_list', views.service_list, name='service_list'),
@@ -25,5 +32,5 @@ urlpatterns = [
     path('product/<int:pk>/edit/', views.product_edit, name='product_edit'),
     path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
 
-    path('customer/<int:pk>/summary/', views.summary, name='summary'),
+
 ]

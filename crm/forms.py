@@ -13,7 +13,7 @@ class CustomerForm(forms.ModelForm):
 class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service
-        fields = ('cust_name', 'service_category', 'description', 'location', 'setup_time', 'cleanup_time', 'service_charge')
+        fields = ('category','name', 'author', 'image', 'edition', 'isbn', 'price', 'sellername', 'selleremail', 'sellerphone')
 
 
 class ProductForm(forms.ModelForm):
@@ -21,6 +21,11 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ('cust_name', 'product', 'p_description', 'quantity', 'pickup_time', 'charge')
 
-#class LoginForm(forms.Form):
-    #username = forms.CharField()
-    #password = forms.CharField(widget=forms.PasswordInput)
+
+class EmailPostForm(forms.Form):
+    name = forms.CharField(max_length=25)
+    email = forms.EmailField()
+    to = forms.EmailField()
+    comments = forms.CharField(required=False,
+                               widget=forms.Textarea)
+
