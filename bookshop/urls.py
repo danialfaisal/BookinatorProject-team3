@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
+#from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -26,12 +27,15 @@ urlpatterns = [
 
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('buybooks/payment/', include('payment.urls', namespace='payment')),
     path('buybooks/shop/', include('shop.urls', namespace='shop')),
     path('buybooks/', include('buybooks.urls', namespace='buybooks')),
     path('', include('crm.urls')),
+    path('account/', include('account.urls')),
 
     url(r'^accounts/login/$', LoginView.as_view(template_name='registration/login.html'), name="login"),
     url(r'^accounts/logout/$', LogoutView.as_view(), LogoutView.next_page, name="logout"),
+
 ]
 
 if settings.DEBUG:

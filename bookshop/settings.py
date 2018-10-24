@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
 
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'buybooks.apps.BuybooksConfig',
+    'payment.apps.PaymentConfig',
 
 ]
 
@@ -175,6 +177,23 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'a1a428b9fc6828'
 EMAIL_HOST_PASSWORD = 'ad0a45d1259f2c'
 EMAIL_PORT = '2525'
+
+
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = '383r8rtg6wy3b5mq'
+BRAINTREE_PUBLIC_KEY = 'n6g9nvxzhbgtc9mh'
+BRAINTREE_PRIVATE_KEY = '5550da5e80cef0800eacf93391b2d30f'
+
+from braintree import Configuration, Environment
+
+Configuration.configure(
+    Environment.Sandbox,
+    # Environment.Production,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
 
 try:
     from .local_settings import *

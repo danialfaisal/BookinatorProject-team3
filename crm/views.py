@@ -7,18 +7,17 @@ from django.shortcuts import redirect
 from shop.models import Category
 from django.core.mail import send_mail
 
-
-
 now = timezone.now()
+
 
 def home(request):
     return render(request, 'crm/home.html', {'crm': home})
 
 
-#customer
+# customer
 
-#@login_required
-#def customer_list(request):
+# @login_required
+# def customer_list(request):
 #    customer = Customer.objects.filter(created_date__lte=timezone.now())
 #    return render(request, 'crm/customer_list.html', {'customers': customer})
 
@@ -48,14 +47,12 @@ def customer_delete(request, pk):
     return redirect('crm:customer_list')
 
 
-#service
+# service
 
 @login_required
 def service_list(request):
     services = Service.objects.filter(created_date__lte=timezone.now())
     return render(request, 'crm/service_list.html', {'services': services})
-
-
 
 
 def book_list(request, category_slug=None):
@@ -80,35 +77,32 @@ def book_detail(request, id, slug):
 
     return render(request,
                   'crm/products/detail.html',
-                  {'service': service})
+                  {'service': service,
+                   })
 
 
-
-#def book_share(request, post_id):
+def book_share(request, service_id):
     # Retrieve post by id
- #   service = get_object_or_404(Service, id=post_id)
-  #  sent = False
+    service = get_object_or_404(Service, id=service_id, available=True)
+    sent = False
 
-   # if request.method == 'POST':
+    if request.method == 'POST':
         # Form was submitted
-    #    form = EmailPostForm(request.POST)
-     #   if form.is_valid():
+        form = EmailPostForm(request.POST)
+        if form.is_valid():
             # Form fields passed validation
-    #       cd = form.cleaned_data
-    #       service_url = request.build_absolute_uri(
-    #                                     service.get_absolute_url())
-    #       subject = '{} ({}) recommends you reading "{}"'.format(cd['name'], cd['email'], service.name)
-    #       message = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(service.name, service_url, cd['name'], cd['comments'])
-    #       send_mail(subject, message, 'admin@myblog.com',
-    #[cd['to']])
-            #sent = True
-# else:
-            #       form = EmailPostForm()
-#return render(request, "crm/products/share.html", {'service': service,
-#                                                       'form': form,
-#                                                       'sent': sent})
-
-
+            cd = form.cleaned_data
+            service_url = request.build_absolute_uri(
+                                            service.get_absolute_url())
+            subject = '{} ({}) wants to buy your book "{}"'.format(cd['name'], cd['email'], service.name)
+            message = 'Read "{}" at {}\n\n{}\'s comments:'.format(service.name, service_url, cd['name'])
+            send_mail(subject, message, 'admin@myblog.com', [cd['to']])
+            sent = True
+    else:
+        form = EmailPostForm()
+    return render(request, 'crm/products/share.html', {'service': service,
+                                                       'form': form,
+                                                       'sent': sent})
 
 
 @login_required
@@ -153,7 +147,7 @@ def service_delete(request, pk):
     return redirect('crm:service_list')
 
 
- # products
+# products
 
 
 @login_required
@@ -213,6 +207,7 @@ def summary(request, pk):
     sum_service_charge = Service.objects.filter(cust_name=pk).aggregate(Sum('service_charge'))
     sum_product_charge = Product.objects.filter(cust_name=pk).aggregate(Sum('charge'))
     return render(request, 'crm/summary.html', {'customers': customers,
-                                                    'products': products,
-                                                    'services': services,
-                                                    'sum_service_charge': sum_service_charge,'sum_product_charge': sum_product_charge,})
+                                                'products': products,
+                                                'services': services,
+                                                'sum_service_charge': sum_service_charge,
+                                                'sum_product_charge': sum_product_charge, })
