@@ -98,10 +98,10 @@ WSGI_APPLICATION = 'bookshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd45bakcp2fae9e',
-        'USER': 'kcqrqxunakcghz',
-        'PASSWORD': '86bf509809f16eed7c4da0b1fa9af55630900afda4f4979cba02963879b61a9e',
-        'HOST': 'ec2-54-235-90-0.compute-1.amazonaws.com',
+        'NAME': 'ddurmt3f40taf8',
+        'USER': 'pdtnospquggwda',
+        'PASSWORD': '9c3cce9f2ed7c1138b67e6736927fb81c22446346bc34ffbe78f0d92e78821a7',
+        'HOST': 'ec2-54-204-14-96.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
