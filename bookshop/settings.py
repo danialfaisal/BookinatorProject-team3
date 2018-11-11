@@ -188,12 +188,14 @@ BRAINTREE_PRIVATE_KEY = '5550da5e80cef0800eacf93391b2d30f'
 from braintree import Configuration, Environment
 
 Configuration.configure(
-    #Environment.Sandbox,
-    Environment.Production,
-    BRAINTREE_MERCHANT_ID,
-    BRAINTREE_PUBLIC_KEY,
-    BRAINTREE_PRIVATE_KEY
+    Environment.Sandbox,
+    #Environment.Production,
+    merchant_id=BRAINTREE_MERCHANT_ID,
+    public_key=BRAINTREE_PUBLIC_KEY,
+    private_key=BRAINTREE_PRIVATE_KEY
 )
+
+
 
 try:
     from .local_settings import *
