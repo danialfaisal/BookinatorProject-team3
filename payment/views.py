@@ -8,6 +8,13 @@ from django.conf import settings
 #from io import BytesIO
 from cart.cart import Cart
 
+
+
+braintree.Configuration.configure(braintree.Environment.Sandbox,
+                                  merchant_id="383r8rtg6wy3b5mq",
+                                  public_key="n6g9nvxzhbgtc9mh",
+                                  private_key="5550da5e80cef0800eacf93391b2d30f")
+
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
