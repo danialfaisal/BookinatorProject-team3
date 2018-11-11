@@ -185,15 +185,22 @@ BRAINTREE_MERCHANT_ID = '383r8rtg6wy3b5mq'
 BRAINTREE_PUBLIC_KEY = 'n6g9nvxzhbgtc9mh'
 BRAINTREE_PRIVATE_KEY = '5550da5e80cef0800eacf93391b2d30f'
 
-from braintree import Configuration, Environment
+#from braintree import Configuration, Environment
 
-Configuration.configure(
-    Environment.Sandbox,
+#Configuration.configure(
+ #   Environment.Sandbox,
     #Environment.Production,
-    merchant_id=BRAINTREE_MERCHANT_ID,
-    public_key=BRAINTREE_PUBLIC_KEY,
-    private_key=BRAINTREE_PRIVATE_KEY
-)
+  #  merchant_id=BRAINTREE_MERCHANT_ID,
+   # public_key=BRAINTREE_PUBLIC_KEY,
+    #private_key=BRAINTREE_PRIVATE_KEY
+#)
+
+import braintree
+
+braintree.Configuration.configure(braintree.Environment.Sandbox,
+                                  merchant_id="383r8rtg6wy3b5mq",
+                                  public_key="n6g9nvxzhbgtc9mh",
+                                  private_key="5550da5e80cef0800eacf93391b2d30f")
 
 
 
