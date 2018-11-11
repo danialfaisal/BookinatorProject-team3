@@ -188,8 +188,8 @@ BRAINTREE_PRIVATE_KEY = '5550da5e80cef0800eacf93391b2d30f'
 from braintree import Configuration, Environment
 
 Configuration.configure(
-    Environment.Sandbox,
-    # Environment.Production,
+    #Environment.Sandbox,
+    Environment.Production,
     BRAINTREE_MERCHANT_ID,
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
