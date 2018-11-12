@@ -27,7 +27,7 @@ SECRET_KEY = 'ts-q2k)i!dmia=a_manz0@(is)f#y^6ss^%xypert6&2dl9ihv'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-#mfs-assignment-2.herokuapp.com
+
 
 
 # Application definition
@@ -182,8 +182,8 @@ EMAIL_PORT = '2525'
 
 # Braintree settings
 BRAINTREE_MERCHANT_ID = '383r8rtg6wy3b5mq'
-BRAINTREE_PUBLIC_KEY = 'n6g9nvxzhbgtc9mh'
-BRAINTREE_PRIVATE_KEY = '5550da5e80cef0800eacf93391b2d30f'
+BRAINTREE_PUBLIC_KEY = 'rwcjp22ww6khkgh5'
+BRAINTREE_PRIVATE_KEY = '5269fd58bd9052b11d833f2437520887'
 
 from braintree import Configuration, Environment
 
