@@ -181,9 +181,9 @@ EMAIL_PORT = '2525'
 
 
 # Braintree settings
-BRAINTREE_MERCHANT_ID = '383r8rtg6wy3b5mq'
-BRAINTREE_PUBLIC_KEY = 'rwcjp22ww6khkgh5'
-BRAINTREE_PRIVATE_KEY = '5269fd58bd9052b11d833f2437520887'
+BRAINTREE_MERCHANT_ID = 'cypz6hm4gv5z79gk'
+BRAINTREE_PUBLIC_KEY = 'vsjy429j6sjmpw85'
+BRAINTREE_PRIVATE_KEY = 'e487b922dc784a152a21b8ed0dc67ea0'
 
 from braintree import Configuration, Environment
 
