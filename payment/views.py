@@ -8,15 +8,6 @@ from django.conf import settings
 #from io import BytesIO
 from cart.cart import Cart
 
-braintree.Configuration.configure(
-    braintree.Environment.Sandbox,
-    #Environment.Production,
-    merchant_id=settings.BRAINTREE_MERCHANT_ID,
-    public_key=settings.BRAINTREE_PUBLIC_KEY,
-    private_key=settings.BRAINTREE_PRIVATE_KEY
-)
-
-
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
@@ -27,7 +18,7 @@ def payment_process(request):
         cart.clear()
 
         # set the order in the session
-        request.session['order_id'] = order.id
+        #request.session['order_id'] = order.id
 
 
         # retrieve nonce
