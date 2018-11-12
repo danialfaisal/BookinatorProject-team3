@@ -15,7 +15,7 @@ def payment_process(request):
     if request.method == 'POST':
 
         # clear the cart
-        #cart.clear()
+        cart.clear()
 
         # set the order in the session
         #request.session['order_id'] = order.id
