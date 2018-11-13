@@ -13,12 +13,43 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
+
+
         }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.3);
+            /*background-image: url("images/campus.jpg");*/
+        }
+
+
+
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
             height: 450px
         }
+
+
+
+        .main{
+            text-align: center;
+        }
+
+        #unologo{
+            max-width: 200px;
+        }
+        #bigText{
+            font-size: 80px;
+            font-family: oswald;
+        }
+        #smallText{
+            font-size: 30px;
+            padding-bottom: 50px;
+        }
+
+
+
 
         /* Set gray background color and 100% height */
         .sidenav {
@@ -33,6 +64,22 @@
             color: white;
             padding: 15px;
         }
+
+
+
+        .row{
+            margin-left: auto;
+            align-content: center;
+            height: fit-content;
+
+        }
+
+        .col-md-3{
+            margin-left: 50px;
+        }
+
+
+
 
         /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
@@ -77,6 +124,7 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="dropdown">
+                    <p style="color:white; float:left;">Logged in as {{user.username}}</p>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>
@@ -91,8 +139,15 @@
         </div>
     </div>
 </nav>
-<div class="content container">
-    <div class="row">
+
+
+<div class = "main">
+    <img id="unologo" src="{% static "images/unologo.png" %}"/>
+<h1 id="bigText">Bookinator </h1>
+<h3 id="smallText">A solution for MIS students at the University of Nebraska Omaha. Providing them with more affordable books and allowing them to sell back books to others at a fair price.</h3>
+    <!--<div class="content container">-->
+    <div>
+    <div class="row" style="alignment: center">
         <div class="col-md-8">
             {% block content %}
                 <div class="links">
@@ -104,7 +159,6 @@
                                 <div class="caption">
                                     <h2>Buy Books</h2>
                                     <p>Buy new or used books. </p>
-
                                         <p><a class="btn btn-default" href="{% url 'buybooks:home' %}"
                                               role="button">View
                                             details &raquo;</a></p>
@@ -139,6 +193,7 @@
             {% endblock %}
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>

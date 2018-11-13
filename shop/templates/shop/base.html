@@ -16,6 +16,12 @@
             border-radius: 0;
         }
 
+
+        body {
+            background-color: rgba(0, 0, 0, 0.3);
+            /*background-image: url("images/campus.jpg");*/
+        }
+
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
             height: 450px
@@ -78,6 +84,7 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="dropdown">
+                    <p style="color:white; float:left;">Logged in as {{user.username}}</p>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>

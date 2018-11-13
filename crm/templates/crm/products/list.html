@@ -14,8 +14,8 @@
         <a href="{{ service.get_absolute_url }}">
           <img src="{% if service.image %}{{ service.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         </a>
-        <h5><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></h5>
-        <h5>${{ service.price }}</h5><br><br>
+        <h2><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></h2>
+        <h2>${{ service.price }}</h2><br><br>
       </div>
     {% endfor %}
   </div>

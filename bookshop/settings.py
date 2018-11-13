@@ -174,8 +174,8 @@ CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'a1a428b9fc6828'
-EMAIL_HOST_PASSWORD = 'ad0a45d1259f2c'
+EMAIL_HOST_USER = 'fe44368c51f8a1'
+EMAIL_HOST_PASSWORD = '52f858b46e762b'
 EMAIL_PORT = '2525'
 
 
