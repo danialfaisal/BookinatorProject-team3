@@ -11,6 +11,7 @@
     </p>
   {% else %}
     <p>Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here</a></p>
+      <!--<p>Click here to continue as guest <a href="{% url "buybooks:home" %}"> here</a></p>-->
   {% endif %}
   <div class="login-form">
     <form action="{% url 'login' %}" method="post">

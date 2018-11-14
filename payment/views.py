@@ -11,11 +11,12 @@ from cart.cart import Cart
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
-    cart = Cart(request)
+    #cart = Cart(request)
+
     if request.method == 'POST':
 
         # clear the cart
-        cart.clear()
+        #cart.clear()
 
         # set the order in the session
         #request.session['order_id'] = order.id
