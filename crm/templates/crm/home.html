@@ -13,43 +13,16 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
-
-
         }
-
         body {
-            background-color: rgba(0, 0, 0, 0.3);
-            /*background-image: url("images/campus.jpg");*/
+
+
         }
-
-
-
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
             height: 450px
         }
-
-
-
-        .main{
-            text-align: center;
-        }
-
-        #unologo{
-            max-width: 200px;
-        }
-        #bigText{
-            font-size: 80px;
-            font-family: oswald;
-        }
-        #smallText{
-            font-size: 30px;
-            padding-bottom: 50px;
-        }
-
-
-
 
         /* Set gray background color and 100% height */
         .sidenav {
@@ -58,29 +31,53 @@
             height: 100%;
         }
 
+        .main{
+            text-align: center;
+
+        }
+
+        #background {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            filter: blur(7px);
+            opacity: 1;
+        }
+
+
+        #unologo{
+            max-width: 10%;
+
+
+        }
+        #bigText{
+            font-size: 380%;
+            font-family: oswald;
+            color: #222222;
+        }
+        #smallText{
+            font-size: 150%;
+            padding-bottom: 2%;
+            color: #222222;
+            position: center;
+            text-align: center;
+
+        }
         /* Set black background color, white text and some padding */
         footer {
             background-color: #550a00;
             color: white;
-            padding: 15px;
-        }
-
-
-
-        .row{
-            margin-left: auto;
-            align-content: center;
-            height: fit-content;
-
+            padding: 10%;
         }
 
         .col-md-3{
-            margin-left: 50px;
+            margin-left: 2%;
+            width: 25%;
+            height: fit-content;
         }
-
-
-
-
         /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
             .sidenav {
@@ -93,6 +90,7 @@
             }
         }
     </style>
+    <!-- Navigation bar -->
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-inverse">
@@ -119,12 +117,11 @@
                 <li><a href="{% url 'buybooks:home' %}">Buy Books</a></li>
                <li><a href="{% url 'crm:service_list' %}">Sell Books</a></li>
                 <li><a href="{% url 'crm:product_list' %}">Rent Books</a></li>
-
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+
                 {% if user.is_authenticated %}
                     <li class="dropdown">
-                    <p style="color:white; float:left;">Logged in as {{user.username}}</p>
+                        <p style="color:white; float:left;">Welcome, {{user.username}}</p>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>
@@ -139,33 +136,38 @@
         </div>
     </div>
 </nav>
-
-
+<!-- Home page welcome message and content with logo. -->
 <div class = "main">
     <img id="unologo" src="{% static "images/unologo.png" %}"/>
-<h1 id="bigText">Bookinator </h1>
-<h3 id="smallText">A solution for MIS students at the University of Nebraska Omaha. Providing them with more affordable books and allowing them to sell back books to others at a fair price.</h3>
+<h2 id="bigText">Bookinator </h2>
+    <h3 id="smallText">A solution for MIS students at the University of Nebraska Omaha.<br>
+        Providing them with more affordable
+    books and allowing them to sell back books to others at a fair price.</h3>
     <!--<div class="content container">-->
     <div>
-    <div class="row" style="alignment: center">
+    <div id="background">
+        <img src={% static "images/booksorganized.jpg" %}>
+    </div>
+    <div class="row">
         <div class="col-md-8">
             {% block content %}
                 <div class="links">
                     <!-- Example row of columns -->
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3" style="left:20%">
                             <div class="thumbnail">
                                 <img src="{% static "images/buybooks.jpg" %}" alt="customer"/>
                                 <div class="caption">
                                     <h2>Buy Books</h2>
                                     <p>Buy new or used books. </p>
+
                                         <p><a class="btn btn-default" href="{% url 'buybooks:home' %}"
                                               role="button">View
                                             details &raquo;</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3" style="left:30%">
                             <div class="thumbnail">
                                 <img src="{% static "images/sellbooks.jpg" %}" alt="cupcakes"/>
                                 <div class="caption">
@@ -177,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                       <div class="col-md-3">
+                       <div class="col-md-3" style="left:40%">
                             <div class="thumbnail">
                                 <img src="{% static "images/rentbooks.jpg" %}" alt="lunch"/>
                                 <div class="caption">

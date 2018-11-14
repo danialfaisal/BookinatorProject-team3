@@ -1,29 +1,31 @@
+<!-- BUY BOOKS PAGE -->
 {% extends "crm/base.html" %}
 {% load staticfiles %}
 
 
 <div class="content container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" align="center">
             {% block content %}
+                <div id="rightimage">
+                    <img src="{% static "images/bookstack.jpg" %}">
+                </div>
                 <div class="links">
                     <!-- Example row of columns -->
                     <div class="row">
-                        <div class="col-md-3" style="margin-left: 275px">
+                        <div class="col-md-3" style="left: 20%" align="center">
                             <div class="thumbnail">
                                 <img src="{% static "images/bookinatorbooks.jpg" %}" alt="customer"/>
                                 <div class="caption">
                                     <h2>New Books</h2>
                                     <p>Buy new books from Bookinator's own inventory</p>
-
                                         <p><a class="btn btn-default" href="{% url 'shop:product_list' %}"
                                               role="button">View
                                             details &raquo;</a></p>
-
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3"  style="left: 30%" align="center">
                             <div class="thumbnail">
                                 <img src="{% static "images/studentbooks.jpg" %}" alt="cupcakes"/>
                                 <div class="caption">
@@ -41,6 +43,5 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+
 

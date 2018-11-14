@@ -19,6 +19,10 @@
       {% endfor %}
     </ul>
   </div>
+     <div class="search">
+      <input type="text" class="searchTerm" placeholder="Search Books">
+         <i class="fa fa-search"></i>
+    </div>
   <div id="main" class="product-list">
     <h1>{% if category %}{{ category.name }}{% else %}New Books{% endif %}</h1>
     {% for product in products %}
@@ -31,9 +35,6 @@
       </div>
     {% endfor %}
   </div>
-       <div class="search">
-      <input type="text" class="searchTerm" placeholder="Search Books">
-         <i class="fa fa-search"></i>
-    </div>
+
 
 {% endblock %}
