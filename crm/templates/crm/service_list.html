@@ -13,70 +13,34 @@
     <style>
         body {
             background-color: white;
+
         }
     </style>
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Welcome {{ user.username }}</div>
-                    <div class="panel-body">
-                        Add Books you want to sell on Bookinator!.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="background" align="center">
+            <img src="{% static "images/SellOldBooks.jpg" %}">
+            <h3>Fancy a little pocket money? Add Books you want to sell on Bookinator! </h3>
+         </div>
     </div>
     <div class="row" style="padding-left: 2%">
             <a href="{% url 'crm:service_new' %}"><span
                     class="btn btn-primary">Add Book</span></a>
     </div>
-    <div class="row" >
-        <h2 style="padding-left: 2%">List of Used Books</h2>
-    </div>
-    <div>
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr class="bg-info">
-                <th>Course</th>
-                <th>Name of the Book</th>
-                <th>Author's Name</th>
-                <th>Image</th>
-                <th>Book Edition</th>
-                <th>ISBN</th>
-                <th>Asking Price</th>
-                <th>Sellers Name</th>
-                <th>Sellers Contact Email</th>
-                <th>Sellers Contact Phone Number</th>
-                <th colspan="3">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for service in services %}
-                <tr>
-                    <td>{{ service.category }}</td>
-                    <td>{{ service.name }}</td>
-                    <td>{{ service.author }}</td>
-                    <td><img src="{% if service.image %}{{ service.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"></td>
-                    <td>{{ service.edition }}</td>
-                    <td>{{ service.isbn }}</td>
-                    <td>{{ service.price }}</td>
-                    <td>{{ service.sellername }}</td>
-                    <td>{{ service.selleremail }}</td>
-                    <td>{{ service.sellerphone }}</td>
-                    <td><a href="{% url 'crm:service_edit' pk=service.pk %}"
-                           class="btn btn-warning">Edit</a></td>
 
-                <td><a href="{% url 'crm:service_delete' pk=service.pk %}"
-                           onclick="return confirm('Are you sure you want to delete?')"
-                           class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <div id="main" class="product-list">
+    <h1>{% if category %}{{ category.name }}{% else %}List of Used Books{% endif %}</h1>
+    {% for service in services %}
+      <div class="item">
+        <a href="{{ service.get_absolute_url }}">
+          <img src="{% if service.image %}{{ service.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        </a>
+        <a href="{{ service.get_absolute_url }}">{{ service.name }}</a><br>
+        ${{ service.price }}
+      </div>
+    {% endfor %}
+  </div>
 
-    </div>
+
     </body>
     </html>
 {% endblock %}

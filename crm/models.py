@@ -38,6 +38,7 @@ class Service(models.Model):
     category = models.ForeignKey(Category,
                                  related_name='services',
                                  on_delete=models.CASCADE)
+
     name = models.CharField(max_length=200, db_index=True)#, default='name of the book'
     author = models.CharField(max_length=200)#, default='author name'
     slug = models.SlugField(max_length=200, db_index=True, default='isqa-0000')

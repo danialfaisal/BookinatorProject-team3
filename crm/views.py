@@ -55,7 +55,8 @@ def service_list(request):
     return render(request, 'crm/service_list.html', {'services': services})
 
 
-def book_list(request, category_slug=None):
+@login_required
+def book_list(request, category_slug=None): # book_list
     category = None
     categories = Category.objects.all()
     services = Service.objects.filter(created_date__lte=timezone.now())
@@ -69,14 +70,15 @@ def book_list(request, category_slug=None):
                    'services': services})
 
 
-def book_detail(request, id, slug):
+@login_required
+def book_detail(request, id, slug):  # books_detail
     service = get_object_or_404(Service,
                                 id=id,
                                 slug=slug,
                                 available=True)
 
     return render(request,
-                  'crm/products/detail.html',
+                  'crm/service_details.html',
                   {'service': service,
                    })
 
@@ -150,7 +152,6 @@ def service_delete(request, pk):
 # products
 
 
-@login_required
 def RentBooks(request):
     products = Product.objects.filter(created_date__lte=timezone.now())
     return render(request, 'crm/RentBooks.html', {'products': products})

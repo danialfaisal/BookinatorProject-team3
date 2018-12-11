@@ -78,15 +78,19 @@
                 <li><a href="{% url 'crm:service_list' %}">Sell Books</a></li>-->
                 <li><a href="{% url 'crm:RentBooks' %}">Rent Books</a></li>
 
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'crm:contactus' %}">Contact Us</a></li>
+                <li><a href="{% url 'crm:faq' %}">FAQ</a></li>
                 {% if user.is_authenticated %}
+                    <i class='far fa-user' style='font-size:48px;color:white;'></i>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <p style="color:white; float:left;">Welcome, {{user.username}}</p>
+                        <a href="#" class="dropdown-toggle" style="float:left;" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <i class='far fa-user' style='font-size:48px;color:white;'></i>
                             <li><a href="{% url 'logout' %}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
