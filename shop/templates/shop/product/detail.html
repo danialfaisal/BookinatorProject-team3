@@ -19,7 +19,7 @@
       <h3>Author: <h4>{{ product.author }}</h4></h3>
     <h3>Book Edition: <h4>{{ product.edition }}</h4></h3>
       <h3>ISBN: <h4>{{ product.isbn }}</h4></h3>
-      <h3>User Rating:</h3>
+    <h3>User Rating:</h3>
   </div>
   <style>
 *{
@@ -27,7 +27,8 @@
     padding: 0;
 }
 .rate {
-     float: left;
+
+    float: left;
     top : -80;
     height: 66px;
     padding: 0 10px;
@@ -63,13 +64,16 @@
     color: #c59b08;
 }
 </style>
- <html>
- <head>
+
+<html>
+
+<head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Star rating </title>
 </head>
- <body>
+
+<body>
   <div class="rate">
     <input type="radio" id="star5" name="rate" value="5" />
     <label for="star5" title="text">5 stars</label>
@@ -83,5 +87,7 @@
     <label for="star1" title="text">1 star</label>
   </div>
 </body>
- </html>
+
+
+</html>
 {% endblock %}

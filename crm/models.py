@@ -4,8 +4,6 @@ from shop.models import Category
 from django.urls import reverse
 
 
-
-
 # Create your models here.
 class Customer(models.Model):
     cust_name = models.CharField(max_length=50)
@@ -77,8 +75,6 @@ class Service(models.Model):
     def get_absolute_url(self):
             return reverse('crm:book_detail',
                            args=[self.id, self.slug])
-                                    #
-
 
 
 class Product(models.Model):
@@ -103,3 +99,4 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.cust_name)
+

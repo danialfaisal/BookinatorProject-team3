@@ -151,10 +151,19 @@ def service_delete(request, pk):
 
 
 @login_required
-def product_list(request):
+def RentBooks(request):
     products = Product.objects.filter(created_date__lte=timezone.now())
-    return render(request, 'crm/product_list.html', {'products': products})
+    return render(request, 'crm/RentBooks.html', {'products': products})
 
+
+def contactus(request):
+    products = Product.objects.filter(created_date__lte=timezone.now())
+    return render(request, 'crm/contactus.html', {'products': products})
+
+
+def faq(request):
+    products = Product.objects.filter(created_date__lte=timezone.now())
+    return render(request, 'crm/faq.html', {'products': products})
 
 @login_required
 def product_new(request):
@@ -165,7 +174,7 @@ def product_new(request):
             product.created_date = timezone.now()
             product.save()
             products = Product.objects.filter(created_date__lte=timezone.now())
-            return render(request, 'crm/product_list.html',
+            return render(request, 'crm/RentBooks.html',
                           {'products': products})
     else:
         form = ProductForm()
@@ -184,7 +193,7 @@ def product_edit(request, pk):
             product.updated_date = timezone.now()
             product.save()
             products = Product.objects.filter(created_date__lte=timezone.now())
-            return render(request, 'crm/product_list.html', {'products': products})
+            return render(request, 'crm/RentBooks.html', {'products': products})
     else:
         # print("else")
         form = ProductForm(instance=product)
@@ -195,7 +204,7 @@ def product_edit(request, pk):
 def product_delete(request, pk):
     product = get_object_or_404(Product, pk=pk)
     product.delete()
-    return redirect('crm:product_list')
+    return redirect('crm:RentBooks')
 
 
 @login_required

@@ -11,13 +11,14 @@ class OrderItemInline(admin.TabularInline):
     model = OrderItem
     raw_id_fields = ['product']
 
+
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment;' \
                                       'filename={}.csv'.format(opts.verbose_name)
-
     writer = csv.writer(response)
+
     fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]
     # Write a first row with header information
     writer.writerow([field.verbose_name for field in fields])
@@ -39,6 +40,7 @@ export_to_csv.short_description = 'Export to CSV'
 def order_detail(obj):
     return mark_safe('<a href="{}">View</a>'.format(
         reverse('orders:admin_order_detail', args=[obj.id])))
+
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):

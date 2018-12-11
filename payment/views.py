@@ -6,22 +6,12 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 #import weasyprint
 #from io import BytesIO
-from cart.cart import Cart
 
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
-    #cart = Cart(request)
 
     if request.method == 'POST':
-
-        # clear the cart
-        #cart.clear()
-
-        # set the order in the session
-        #request.session['order_id'] = order.id
-
-
         # retrieve nonce
         nonce = request.POST.get('payment_method_nonce', None)
         # create and submit transaction
@@ -64,10 +54,10 @@ def payment_process(request):
         else:
             return redirect('payment:canceled')
     else:
-        # generate token 
+        # generate token
         client_token = braintree.ClientToken.generate()
-        return render(request, 
-                      'payment/process.html', 
+        return render(request,
+                      'payment/process.html',
                       {'order': order,
                        'client_token': client_token})
 

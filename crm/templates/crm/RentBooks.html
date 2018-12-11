@@ -1,0 +1,37 @@
+<!--RENT BOOKS PAGE -->
+{% extends 'crm/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bookinator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+</head>
+<body>
+<style>
+    body {
+        background-color: white;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+            <img src="{% static "images/Changesahead.png" %}" alt="customer"/>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel-heading">SERVICE NOT AVAILABLE!</div>
+                <div class="panel-body">
+                   Currently, Bookinator does not offer the services of renting books.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

@@ -7,6 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+          integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -96,13 +99,17 @@
                 <li><a href="{% url 'crm:home' %}">Home</a></li>
                 <li><a href="{% url 'buybooks:home' %}">Buy Books</a></li>
                <li><a href="{% url 'crm:service_list' %}">Sell Books</a></li>
-                <li><a href="{% url 'crm:product_list' %}">Rent Books</a></li>
+                <li><a href="{% url 'crm:RentBooks' %}">Rent Books</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'crm:contactus' %}">Contact Us</a></li>
+                <li><a href="{% url 'crm:faq' %}">FAQ</a></li>
                 {% if user.is_authenticated %}
+                    <i class='far fa-user' style='font-size:48px;color:white;'></i>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <p style="color:white; float:left;">Welcome, {{user.username}}</p>
+                        <a href="#" class="dropdown-toggle" style="float:left;" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -155,7 +162,7 @@
                                 <div class="caption">
                                     <h2>Rent Books</h2>
                                     <p>Option not currently available!.</p>
-                                    <p><a class="btn btn-default" href="{% url 'crm:product_list' %}" role="button">View
+                                    <p><a class="btn btn-default" href="{% url 'crm:RentBooks' %}" role="button">View
                                         details &raquo;</a></p>
                                 </div>
                             </div>

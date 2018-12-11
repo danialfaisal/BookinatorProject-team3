@@ -27,7 +27,7 @@ SECRET_KEY = 'ts-q2k)i!dmia=a_manz0@(is)f#y^6ss^%xypert6&2dl9ihv'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+#mfs-assignment-2.herokuapp.com
 
 
 # Application definition
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'buybooks.apps.BuybooksConfig',
     'payment.apps.PaymentConfig',
-    'coupons.apps.CouponsConfig',
 
 ]
 
@@ -99,10 +98,10 @@ WSGI_APPLICATION = 'bookshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ddurmt3f40taf8',
-        'USER': 'pdtnospquggwda',
-        'PASSWORD': '9c3cce9f2ed7c1138b67e6736927fb81c22446346bc34ffbe78f0d92e78821a7',
-        'HOST': 'ec2-54-204-14-96.compute-1.amazonaws.com',
+        'NAME': 'd45bakcp2fae9e',
+        'USER': 'kcqrqxunakcghz',
+        'PASSWORD': '86bf509809f16eed7c4da0b1fa9af55630900afda4f4979cba02963879b61a9e',
+        'HOST': 'ec2-54-235-90-0.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -155,7 +154,7 @@ STATICFILES_DIRS = (
 
 
 # Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config()
 
@@ -175,16 +174,16 @@ CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'fe44368c51f8a1'
-EMAIL_HOST_PASSWORD = '52f858b46e762b'
+EMAIL_HOST_USER = 'a1a428b9fc6828'
+EMAIL_HOST_PASSWORD = 'ad0a45d1259f2c'
 EMAIL_PORT = '2525'
 
 
 
 # Braintree settings
-BRAINTREE_MERCHANT_ID = 'cypz6hm4gv5z79gk'
-BRAINTREE_PUBLIC_KEY = 'vsjy429j6sjmpw85'
-BRAINTREE_PRIVATE_KEY = 'e487b922dc784a152a21b8ed0dc67ea0'
+BRAINTREE_MERCHANT_ID = '8kcs98r7pqxbdvp2'
+BRAINTREE_PUBLIC_KEY = '89kx3gxfkqzktsfb'
+BRAINTREE_PRIVATE_KEY = 'a4c23617e21a7797f7ea031f510ccc2a'
 
 from braintree import Configuration, Environment
 
@@ -196,11 +195,7 @@ Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 )
 
-
-
 try:
     from .local_settings import *
 except ImportError:
     pass
-
-

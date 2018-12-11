@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "css/base1.css" %}"/>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+          integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -14,12 +16,6 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
-        }
-
-
-        body {
-            background-color: rgba(255, 255, 255, 0);
-            /*background-image: url("images/campus.jpg");*/
         }
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -33,6 +29,8 @@
             background-color: #FF0202;
             height: 100%;
         }
+
+
 
         /* Set black background color, white text and some padding */
         footer {
@@ -78,17 +76,17 @@
                 <li><a href="{% url 'crm:home' %}">Home</a></li>
                 <li><a href="{% url 'buybooks:home' %}">Buy Books</a></li>-->
                 <li><a href="{% url 'crm:service_list' %}">Sell Books</a></li>-->
-                <li><a href="{% url 'crm:product_list' %}">Rent Books</a></li>
+                <li><a href="{% url 'crm:RentBooks' %}">Rent Books</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="dropdown">
-                    <p style="color:white; float:left;">Logged in as {{user.username}}</p>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <i class='far fa-user' style='font-size:48px;color:white;'></i>
                             <li><a href="{% url 'logout' %}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
@@ -100,8 +98,10 @@
     </div>
 </nav>
 </body>
+
+</body>
   <div id="subheader">
-    <div class="cart">
+    <div class="cart" style="border: #0ac33e;">
       {% with total_items=cart|length %}
           {% if cart|length > 0 %}
             Your cart:
@@ -119,4 +119,5 @@
     {% block content %}
     {% endblock %}
   </div>
+</body>
 </html>
