@@ -7,8 +7,41 @@
 
 {% block content %}
 
-    <div style='float:left;' class="container">
+
+
+<style>
+.alert {
+  padding: 2%;
+    margin: 2%;
+  background-color: green;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>INFO!</strong> Winter Sale!!! Apply "winter 2018" code for 10% off!
+</div>
+
+
+     <div style='float:left;' class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
 
 
     <!-- Wrapper for slides -->
@@ -39,13 +72,14 @@
     </a>
   </div>
 </div>
-     <!-- Search Bar -->
+     <!-- Search Bar
     <div class="search">
       <input type="text" class="searchTerm" placeholder="Search Books">
 
         <i class="fa fa-search"></i>
 
     </div>
+     -->
   <div id="sidebar">
     <h3>Courses</h3>
     <ul>
@@ -72,8 +106,6 @@
       </div>
     {% endfor %}
   </div>
-
-
 
 
 {% endblock %}
