@@ -1,6 +1,21 @@
 {% extends "shop/base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>Your payment was successful</h1>
-  <p>Your payment has been processed successfully.</p>
+    <html>
+    <body>
+    <style>
+        body {
+            background-color: white;
+
+        }
+    </style>
+    <div class="container">
+        <div id="background" align="center">
+            <img src="{% static "images/PaymentSuccessful.png" %}">
+            <h3>YAY! Purchase done. Now get to reading! </h3>
+         </div>
+    </div>
+    </body>
+    </html>
 {% endblock %}
