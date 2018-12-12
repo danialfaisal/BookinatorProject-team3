@@ -14,14 +14,6 @@ def home(request):
     return render(request, 'crm/home.html', {'crm': home})
 
 
-# customer
-
-# @login_required
-# def customer_list(request):
-#    customer = Customer.objects.filter(created_date__lte=timezone.now())
-#    return render(request, 'crm/customer_list.html', {'customers': customer})
-
-
 @login_required
 def customer_edit(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
@@ -54,6 +46,7 @@ def service_list(request):
     services = Service.objects.filter(created_date__lte=timezone.now())
     return render(request, 'crm/service_list.html', {'services': services})
 
+
 @login_required
 def book_list(request, category_slug=None): # book_list
     category = None
@@ -71,6 +64,19 @@ def book_list(request, category_slug=None): # book_list
 
 @login_required
 def book_detail(request, id, slug):  # books_detail
+    service = get_object_or_404(Service,
+                                id=id,
+                                slug=slug,
+                                available=True)
+
+    return render(request,
+                  'crm/products/detail.html',
+                  {'service': service,
+                   })
+
+
+@login_required
+def used_book_detail(request, id, slug):  # books_detail
     service = get_object_or_404(Service,
                                 id=id,
                                 slug=slug,
@@ -204,7 +210,7 @@ def product_edit(request, pk):
 def product_delete(request, pk):
     product = get_object_or_404(Product, pk=pk)
     product.delete()
-    return redirect('crm:RentBooks')
+    return redirect('crm:product_list')
 
 
 @login_required

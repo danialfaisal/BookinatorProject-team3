@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import dj_database_url
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -172,12 +173,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'a1a428b9fc6828'
-EMAIL_HOST_PASSWORD = 'ad0a45d1259f2c'
-EMAIL_PORT = '2525'
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'a1a428b9fc6828'
+# EMAIL_HOST_PASSWORD = 'ad0a45d1259f2c'
+# EMAIL_PORT = '2525'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'isqa4900@gmail.com'
+EMAIL_HOST_PASSWORD = 'Sachinpswd1'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 
@@ -185,6 +192,7 @@ EMAIL_PORT = '2525'
 BRAINTREE_MERCHANT_ID = '8kcs98r7pqxbdvp2'
 BRAINTREE_PUBLIC_KEY = '89kx3gxfkqzktsfb'
 BRAINTREE_PRIVATE_KEY = 'a4c23617e21a7797f7ea031f510ccc2a'
+
 
 from braintree import Configuration, Environment
 

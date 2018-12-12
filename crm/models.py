@@ -47,9 +47,9 @@ class Service(models.Model):
     edition = models.CharField(max_length=5)#, default='1st'
     isbn = models.CharField(max_length=14)#, default='000000000000'
     price = models.DecimalField(max_digits=10, decimal_places=2)#, default=''
-    sellername = models.CharField(max_length=200)#, default='Seller name'
-    selleremail = models.CharField(max_length=200)#, default='Seller email'
-    sellerphone = models.CharField(max_length=200)#, default='Seller phone number'
+    sellername = models.CharField(max_length=200)     # default='Seller name'
+    selleremail = models.CharField(max_length=200)    # default='Seller email'
+    sellerphone = models.CharField(max_length=200)    # default='Seller phone number'
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)

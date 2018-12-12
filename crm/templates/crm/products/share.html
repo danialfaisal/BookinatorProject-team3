@@ -2,13 +2,14 @@
 {% load static %}
 
 
-{% block title %}Share a post{% endblock %}
+{% block title %}Contact Seller{% endblock %}
 
 {% block content %}
   {% if sent %}
     <h1>E-mail successfully sent</h1>
     <p>
       "{{ service.name }}" was successfully sent to {{ form.cleaned_data.to }}.
+    <img align="center" src="{{% static "images/emailsent.png" %}">
     </p>
   {% else %}
     <h1>Let "{{ service.sellername }}" know that you are interested in buying this book</h1>
