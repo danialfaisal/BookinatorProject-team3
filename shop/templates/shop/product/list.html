@@ -51,7 +51,7 @@
         <img style="height: 50%;width: 110%;" src="../../../static/img/coffeeAndBookWithText.PNG">
       </div>
         {% for product in products %}
-      <div class="item" style="margin-left: 10%; height: 50%;width: 110%; ">
+      <div class="item" style="margin-left: 35%; height: 50%;width: 110%; ">
         <a href="{{ product.get_absolute_url }}">
           <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         </a>
