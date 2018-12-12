@@ -54,7 +54,6 @@ def service_list(request):
     services = Service.objects.filter(created_date__lte=timezone.now())
     return render(request, 'crm/service_list.html', {'services': services})
 
-
 @login_required
 def book_list(request, category_slug=None): # book_list
     category = None

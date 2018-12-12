@@ -1,10 +1,73 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
 body {
-    padding-left: 15px;
-
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
 }
+
+h1, h2, h3, h4, h5 , h6 {
+    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+}
+
+
+a {
+    text-decoration:none;
+    color:#5993bb;
+}
+
+a:hover {
+    color:#77b6e2;
+}
+
+a.button, input[type="submit"] {
+    color:#fff;
+    background:#5993bb;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
 
 h1 a {
     color: #FCA205;
     font-family: 'cursive';
+}
+
+.product-list .item {
+    width:25%;
+    padding:10px 20px 10px 0;
+    float:left;
+    text-align:center;
+    line-height:1.2;
+}
+
+.product-list .item img {
+    width:100%;
+    margin-bottom:8px;
+}
+
+.service-details {
+    text-align:justify;
+}
+
+.service-details .price {
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.service-details img {
+    width:40%;
+    float:left;
+    padding:0 20px 20px 0;
+}
+
+.service-details h1 {
+    margin-bottom:0;
+}
+
+.service-details h2 {
+    margin-top:10px;
 }
